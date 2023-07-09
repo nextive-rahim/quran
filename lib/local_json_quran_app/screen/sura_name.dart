@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:api_test/local_json_quran_app/screen/bookmark.dart';
 import 'package:api_test/local_json_quran_app/screen/sura_details.dart';
 import 'package:flutter/material.dart';
@@ -13,30 +12,9 @@ class LocalSuraPage extends StatefulWidget {
 }
 
 class _LocalSuraPageState extends State<LocalSuraPage> {
-  // List _itemss = [];
   List _SuraName = [];
 
-  // Fetch content from the json file
-  // Future<void> readJson() async {
-  //   // final String response = await rootBundle.loadString('assets/ayats_ar.json');
-  //   // final data = await json.decode(response);
-  //   // setState(() {
-  //   //   // _items = data;
-  //   // });
-  // final String responses = await rootBundle.loadString('assets/ayats_bn.json');
-  //   final datas = await json.decode(responses);
-  //   print(datas);
-  //   setState(() {
-  //     _itemss = datas;
-  //   });
-
-  // }
   Future<void> suraName(name) async {
-    // final String response = await rootBundle.loadString('assets/ayats_ar.json');
-    // final data = await json.decode(response);
-    // setState(() {
-    //   // _items = data;
-    // });
     final String response = await rootBundle.loadString('assets/sura.json');
     final data = await json.decode(response);
     print(data);
