@@ -1,16 +1,14 @@
-
-
 import 'dart:convert';
 
-List<AyatListModel> ayatListModelFromJson(String str) =>
-    List<AyatListModel>.from(
-        json.decode(str).map((x) => AyatListModel.fromJson(x)));
+List<SuraDetailsResponseModel> ayatListModelFromJson(String str) =>
+    List<SuraDetailsResponseModel>.from(
+        json.decode(str).map((x) => SuraDetailsResponseModel.fromJson(x)));
 
-String ayatListModelToJson(List<AyatListModel> data) =>
+String ayatListModelToJson(List<SuraDetailsResponseModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class AyatListModel {
-  AyatListModel({
+class SuraDetailsResponseModel {
+  SuraDetailsResponseModel({
     this.id,
     this.surahId,
     this.ayahNo,
@@ -24,7 +22,8 @@ class AyatListModel {
   String? ayahText;
   List<Bn>? bn;
 
-  factory AyatListModel.fromJson(Map<String, dynamic> json) => AyatListModel(
+  factory SuraDetailsResponseModel.fromJson(Map<String, dynamic> json) =>
+      SuraDetailsResponseModel(
         id: json["id"],
         surahId: json["surah_id"],
         ayahNo: json["ayah_no"],

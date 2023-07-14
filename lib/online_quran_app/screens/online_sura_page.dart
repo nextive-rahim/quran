@@ -1,6 +1,6 @@
 import 'package:api_test/online_quran_app/repository/sura_repository.dart';
 import 'package:api_test/online_quran_app/model/sura_list_model.dart';
-import 'package:api_test/online_quran_app/screens/online_sura_details_page.dart';
+import 'package:api_test/online_quran_app/screens/online_sura_pagination_page.dart';
 import 'package:flutter/material.dart';
 
 class OnlineSuraPage extends StatefulWidget {
@@ -83,12 +83,15 @@ class _OnlineSuraPageState extends State<OnlineSuraPage> {
                     return GestureDetector(
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => OnlineSuraDetailsPage(
-                                      name: suraList[index].name,
-                                      id: int.parse(suraList[index].id!),
-                                    )));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                OnlineSuraPaginationDetailsPage(
+                              name: suraList[index].name,
+                              id: int.parse(suraList[index].id!),
+                            ),
+                          ),
+                        );
                       },
                       child: Card(
                         child: ListTile(
@@ -96,9 +99,7 @@ class _OnlineSuraPageState extends State<OnlineSuraPage> {
                             padding: EdgeInsets.only(top: 20),
                             height: 70,
                             width: 70,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
+                            decoration: BoxDecoration(shape: BoxShape.circle),
                             child: Text(
                               getsuralist.id!,
                               textAlign: TextAlign.center,
@@ -112,7 +113,8 @@ class _OnlineSuraPageState extends State<OnlineSuraPage> {
                         ),
                       ),
                     );
-                  })
+                  },
+                )
               : Center(
                   child: CircularProgressIndicator(),
                 ),

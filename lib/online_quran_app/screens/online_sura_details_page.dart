@@ -266,7 +266,10 @@ class _OnlineSuraDetailsPageState extends State<OnlineSuraDetailsPage> {
                     // When nothing else to load
                     if (_hasNextPage == false)
                       Container(
-                        padding: const EdgeInsets.only(top: 10, bottom: 10),
+                        padding: const EdgeInsets.only(
+                          top: 10,
+                          bottom: 10,
+                        ),
                         color: Colors.yellow[100],
                         child: Center(
                           child: Text('You have fetched all of the content'),
